@@ -19,13 +19,21 @@ class RestaurantList extends HTMLElement {
 
             restaurantItem.innerHTML = `
             <link rel="stylesheet" href="../styles/restaurant-list.css">
-            <div class="retaurant-list">
-                <h2>${restaurant.name}</h2>
-                <p>${restaurant.description}</p>
-                <img src="${restaurant.pictureId}" alt="${restaurant.name}">
-                <p>City: ${restaurant.city}</p>
-                <p>Rating: ${restaurant.rating}</p>
+            <article tabindex="0" class="card">
+            <div class="card-img-container">
+                <img class="card-image" alt="${restaurant.name}" src="${restaurant.pictureId}"/>
+                <span class="card-rating">
+                    <i title="ratings" class="fa fa-star"></i>
+                    <span>${restaurant.rating}</span>
+                </span>
             </div>
+
+            <div class="card-content">
+                <p class="card-content-title">${restaurant.name} - ${restaurant.city}</p>
+                <p class="card-content-title-description">Description: </p>
+                <p class="card-content-description">${restaurant.description}</p>
+            </div>
+        </article>
             `;
 
             restaurantList.appendChild(restaurantItem);

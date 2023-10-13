@@ -4,7 +4,12 @@ class Footer extends HTMLElement {
       this.attachShadow({ mode: 'open' });
       this.shadowRoot.innerHTML = `
         <link rel="stylesheet" href="../styles/footer.css">
-        <div class="footer">footer</div>
+        <footer tabindex="0">
+        <ul>
+          <li>Copyright © 2023</li>
+          <li>Rest Meal @dindarosalin</li>
+        </ul>
+      </footer>
       `;
     }
   }
