@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Onest:wght@200;400;700&display=swap');
+
 body {
-  background-color: lightblue;
+  background-color: #F1F6F9;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Onest', sans-serif;
 }
 
 img {

@@ -4,7 +4,15 @@ class Hero extends HTMLElement {
       this.attachShadow({ mode: 'open' });
       this.shadowRoot.innerHTML = `
         <link rel="stylesheet" href="../styles/hero.css">
-        <div class="hero">hero</div>
+        <div class="hero">
+          <div class="hero__inner">
+            <h1 class="hero__title">Bangun Karirmu Sebagai Developer Profesional</h1>
+            <p class="hero__tagline">
+              Jadilah tuan rumah di negeri sendiri dengan belajar langsung dari para inovator
+              dan developer expert
+            </p>
+          </div>
+        </div>
       `;
     }
   }
