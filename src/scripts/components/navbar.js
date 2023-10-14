@@ -16,7 +16,6 @@ class Navbar extends HTMLElement {
       <a href="/">
           <img src="../public/images/logos/icons8-restauran-64.png" class="nav_logo" alt="logo apk">
       </a>
-      
       <nav id="drawer" class="nav">
       <button class="menu" id="menu" aria-label="button menu dropdown on mobile">☰</button>
           <ul class="nav_list">
@@ -29,15 +28,10 @@ class Navbar extends HTMLElement {
     `;
 
     const menu = this.shadowRoot.querySelector('#menu');
-    const hero = this.shadowRoot.querySelector('.hero');
-    const main = this.shadowRoot.querySelector('main');
     const drawer = this.shadowRoot.querySelector('#drawer');
     menu.addEventListener('click', function (event) {
       drawer.classList.toggle('open');
       event.stopPropagation();
-    });
-    main.addEventListener('click', function () {
-      drawer.classList.remove('open');
     });
   }
 

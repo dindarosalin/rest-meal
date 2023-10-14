@@ -29,3 +29,16 @@ button {
   min-width: 44px;
   min-height: 44px;
 }
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  padding: 8px;
+  color: white;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
