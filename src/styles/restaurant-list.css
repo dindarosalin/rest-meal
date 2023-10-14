@@ -1,73 +1,77 @@
-
-
-/* card */
-.card {
+/* card container */
+.restaurant-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    list-style: none;
+  }
+  
+  /* card */
+  .card {
     width: 100%;
     text-align: center;
     transition: 0.3s;
     background-color: var(--primary-color);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     border-radius: 1em;
-}
-
-.card:hover {
+  }
+  
+  .card:hover {
     box-shadow: 10px 10px 5px 0px var(--secondary-color);
-
-}
-
-.card-rating {
+  }
+  
+  .card-rating {
     position: absolute;
     top: 0;
     right: 0;
-    color: var(--primary-color);
+    color: white;
     font-size: large;
-    background-color: var(--secondary-color);
+    background-color: green;
     padding: 0.4em 1.3em;
     z-index: 1;
     border-radius: 0 1em;
-
-}
-
-.card-rating .fa {
+  }
+  
+  .card-rating .fa {
     font-size: smaller;
     padding: 0.3em 0.8em 0.3em 0;
     color: orange;
-}
-
-.card-img-container {
+  }
+  
+  .card-img-container {
     width: 100%;
     position: relative;
     overflow: hidden;
     transition: transform 0.5s ease;
     max-height: 600px;
-}
-
-.card-image {
+  }
+  
+  .card-image {
     object-fit: cover;
     height: 250px;
     width: 100%;
     border-radius: 1em 1em 0 0;
-}
-
-.card-content {
+  }
+  
+  .card-content {
     padding: 1em 2em;
     font-size: small;
     text-align: center;
-}
-
-.card-content-title {
+  }
+  
+  .card-content-title {
     font-weight: bold;
     padding-bottom: 0.376em;
-}
-
-.card-content-title-description {
+  }
+  
+  .card-content-title-description {
     text-align: left;
     font-weight: bold;
     font-size: large;
     margin: 0;
-}
-
-.card-content-description {
+  }
+  
+  .card-content-description {
     text-align: left;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -75,4 +79,5 @@
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     margin: 10px 0;
-}
+  }
+  

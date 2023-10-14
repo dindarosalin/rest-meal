@@ -19,6 +19,7 @@ class RestaurantList extends HTMLElement {
 
             restaurantItem.innerHTML = `
             <link rel="stylesheet" href="../styles/restaurant-list.css">
+            <!-- Main Content -->
             <article tabindex="0" class="card">
             <div class="card-img-container">
                 <img class="card-image" alt="${restaurant.name}" src="${restaurant.pictureId}"/>

@@ -1,29 +1,48 @@
+/* Jumbotron */
 .hero {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    background-image: url('../public/images/heros/hero-image_2.jpg');
-    background-position: center;
-    background-color: green;
-  }
-  
-  .hero__inner {
-    margin: 0 auto;
-    max-width: 800px;
-  }
-  
-  .hero__title {
-    color: #fff;
-    font-weight: 500;
-    font-size: 36px;
-  }
-  
-  .hero__tagline {
-    color: #fff;
-    margin-top: 16px;
-    font-size: 18px;
-    font-weight: 300;
-  }
+  display: flex;
+  align-items: center;
+  min-height: 500px;
+  width: 100%;
+  text-align: center;
+  background-image: url("../public/images/heros/hero-image_2.jpg");
+  background-position: center;
+}
 
+.hero_inner {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.hero_title {
+  color: var(--primary-color);
+  font-weight: 500;
+  font-size: 50px;
+  margin: 0;
+}
+
+.hero_bold {
+  font-weight: bold;
+  color: white;
+  padding: 0.1em 0.2em;
+  border-radius: 0.5em;
+  display: inline-block;
+}
+
+.hero_tagline {
+  color: green;
+  margin-top: 16px;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.hero_button {
+  margin-top: 16px;
+  padding: 1em;
+  border-radius: 10px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}

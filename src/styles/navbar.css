@@ -1,130 +1,92 @@
-nav {
-  position: relative;
+/* App bar */
+.header {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
   justify-content: space-between;
-  padding: 0.3em;
-  height: 75px;
+  align-items: center;
+  padding: 10px 5%;
+  background: purple;
 }
 
 .menu {
-  font-size: 25px;
-  display: none;
-  width: 44px;
-  height: 44px;
-  color: var(--primary-color);
-}
-
-.menu:hover {
+  font-size: 32px;
+  margin: 10px;
+  display: block;
+  width: 50px;
   cursor: pointer;
-}
-
-.logo-font {
-  font-size: x-large;
-  font-weight: bold;
-  color: var(--primary-color);
+  color: blue;
+  background-color: yelllow;
   text-decoration: none;
-  padding: 0.4em 0;
+  border: none;
 }
 
-.nav-list {
-  display: flex;
-  padding-left: 0;
-  margin-bottom: 0;
+.nav_logo {
+  line-height: 24px;
+  color: white;
+  padding: 0.7rem;
+  margin: 0;
+}
+
+.nav_item,
+a,
+ul {
+  text-decoration: none;
   list-style: none;
-  flex-wrap: wrap;
-  transition: ease;
+  color: white;
 }
 
-.nav-item {
+.nav_item {
   box-sizing: border-box;
   line-height: 24px;
-}
-
-.nav-item a {
-  padding: 0.7rem;
   display: inline-block;
-  font-size: 1.3em;
-  text-decoration: none;
-  color: var(--primary-color);
 }
 
-.nav-item button {
+.nav_item a {
   padding: 0.9rem;
-  background-color: transparent;
-  border: 0 solid transparent;
-  color: var(--primary-color);
-  cursor: pointer;
-  font-size: 1.3;
-  vertical-align: middle;
+  font-size: 1.3em;
 }
 
-.nav-item a:hover {
-  text-decoration: underline;
-  color: var(--secondary-color);
-  cursor: pointer;
+.nav_list {
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
-.nav-item button:hover {
-  text-decoration: underline;
-  color: var(--secondary-color);
-  cursor: pointer;
+.nav a:hover {
+  background-color: grey;
+  color: black;
+  border-radius: 10px;
+  padding: 0.7rem;
+  font-size: 1.3em;
 }
 
-/* Extra small devices ( <= 320px ) */
-@media only screen and (max-width: 340px) {
-  nav {
-    display: flex;
-    flex-direction: row;
-  }
-
-  .logo-font,
-  .hero__title {
-    font-size: 1.5em;
-  }
-
-  .nav-item a,
-  .hero__subtitle,
-  .btn {
-    font-size: 1em;
-  }
-}
-
-/* Smaller devices ( <= 600px ) */
-@media only screen and (max-width: 600px) {
-  .menu {
-    display: block;
-    background-color: yellow;
-    border: 1px solid transparent;
-    text-align: center;
-  }
-
-  .menu-hp {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+/* Tampilan hamburger menu di layar kecil */
+@media screen and (max-width: 768px) {
+  .nav_list {
+    display: none; /* Sembunyikan daftar menu saat layar kecil */
+    flex-direction: column; /* Tampilkan daftar menu secara vertikal */
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: purple;
     width: 100%;
+    transform: translateX(100%); /* Sembunyikan menu di luar layar */
+    transition: transform 0.3s ease-in-out;
   }
 
-  .menu span {
+  .open .nav_list {
+    display: flex; /* Tampilkan daftar menu saat menu hamburger diklik */
+    transform: translateX(0); /* Geser menu ke dalam layar */
+  }
+
+  .nav_item {
+    padding: 1em;
     text-align: center;
   }
+}
 
-  nav {
-    display: flex;
-    flex-direction: column;
-    padding: 3em 0;
-    height: 175px;
-    flex-wrap: wrap;
-  }
-
-  .nav-list {
+/* Menyembunyikan tombol hamburger saat tampilan melebar (misalnya, layar dengan lebar lebih dari 768px) */
+@media screen and (min-width: 769px) {
+  .menu {
     display: none;
   }
-
-  .nav-list-block {
-    display: flex;
-  }
-
 }
