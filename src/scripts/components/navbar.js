@@ -16,14 +16,15 @@ class Navbar extends HTMLElement {
       <a href="/">
           <img src="../public/images/logos/icons8-restauran-64.png" class="nav_logo" alt="logo apk">
       </a>
+      
       <nav id="drawer" class="nav">
+      <button class="menu" id="menu" aria-label="button menu dropdown on mobile">☰</button>
           <ul class="nav_list">
               <li class="nav_item"><a href="#">Home</a></li>
               <li class="nav_item"><a href="#">Favorite</a></li>
               <li class="nav_item"><a href="https://github.com/dindarosalin" target="_blank">About Us</a></li>
           </ul>
       </nav>
-      <button class="menu" id="menu" aria-label="button menu dropdown on mobile">☰</button>
     </header>
     `;
 

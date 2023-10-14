@@ -3,7 +3,8 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 20px;
   list-style: none;
-  padding-left: 0px;
+  padding: 20px;
+  margin: 20px;
 }
 
 .card {
