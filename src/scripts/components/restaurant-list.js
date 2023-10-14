@@ -1,4 +1,3 @@
-// restaurant-list.js
 class RestaurantList extends HTMLElement {
     constructor() {
         super();
@@ -7,7 +6,7 @@ class RestaurantList extends HTMLElement {
     }
 
     async render() {
-        const response = await fetch('../../public/data/DATA.json'); 
+        const response = await fetch('../../public/data/DATA.json');
         const data = await response.json();
 
         const restaurantList = document.createElement('ul');
@@ -19,22 +18,23 @@ class RestaurantList extends HTMLElement {
 
             restaurantItem.innerHTML = `
             <link rel="stylesheet" href="../styles/restaurant-list.css">
-            <!-- Main Content -->
             <article tabindex="0" class="card">
             <div class="card-img-container">
                 <img class="card-image" alt="${restaurant.name}" src="${restaurant.pictureId}"/>
-                <span class="card-rating">
-                    <i title="ratings" class="fa fa-star"></i>
-                    <span>${restaurant.rating}</span>
-                </span>
             </div>
 
             <div class="card-content">
-                <p class="card-content-title">${restaurant.name} - ${restaurant.city}</p>
-                <p class="card-content-title-description">Description: </p>
+                <div class="card-header">
+                <p class="card-content-title">${restaurant.name}</p>
+                <span class="card-rating">
+                    <img src="../public/images/logos/icons8-star-48.png" alt="card-rating" class="star-icon">
+                    <span class="rating">${restaurant.rating}</span>
+                </span>
+                </div>
+                <p class="card-content-city">${restaurant.city} </p>
                 <p class="card-content-description">${restaurant.description}</p>
+                <a href="#" class="card-location">Cek Lokasi</a>
             </div>
-        </article>
             `;
 
             restaurantList.appendChild(restaurantItem);

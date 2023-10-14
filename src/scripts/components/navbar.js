@@ -2,6 +2,7 @@ class Navbar extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
+    window.addEventListener('scroll', this.handleScroll.bind(this));
   }
 
   connectedCallback() {
@@ -12,19 +13,18 @@ class Navbar extends HTMLElement {
     this.shadowRoot.innerHTML = `
     <link rel="stylesheet" href="../styles/navbar.css">
     <header class="header">
-    <a href="/">
-        <h1 class="nav_logo">IC Resto</h1>
-    </a>
-    <button class="menu" id="menu" aria-label="button menu dropdown on mobile">☰</button>
-    <nav id="drawer" class="nav">
-        <ul class="nav_list">
-            <li class="nav_item"><a href="index.html">Home</a></li>
-            <li class="nav_item"><a href="#">Favorite</a></li>
-            <li class="nav_item"><a href="https://github.com/ibnucholdun" target="_blank" rel="noopener">About
-                    Us</a></li>
-        </ul>
-    </nav>
-</header>
+      <a href="/">
+          <img src="../public/images/logos/icons8-restauran-64.png" class="nav_logo" alt="logo apk">
+      </a>
+      <nav id="drawer" class="nav">
+          <ul class="nav_list">
+              <li class="nav_item"><a href="#">Home</a></li>
+              <li class="nav_item"><a href="#">Favorite</a></li>
+              <li class="nav_item"><a href="https://github.com/dindarosalin" target="_blank">About Us</a></li>
+          </ul>
+      </nav>
+      <button class="menu" id="menu" aria-label="button menu dropdown on mobile">☰</button>
+    </header>
     `;
 
     const menu = this.shadowRoot.querySelector('#menu');
@@ -38,6 +38,15 @@ class Navbar extends HTMLElement {
     main.addEventListener('click', function () {
       drawer.classList.remove('open');
     });
+  }
+
+  handleScroll() {
+    const navbar = this.shadowRoot.querySelector('.header');
+    if (window.scrollY > 0) {
+      navbar.classList.add('navbar-fixed');
+    } else {
+      navbar.classList.remove('navbar-fixed');
+    }
   }
 }
 

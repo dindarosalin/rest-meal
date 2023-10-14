@@ -1,29 +1,27 @@
-/* App bar */
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: 10px 5%;
-  background: purple;
+  background: #053b50;
+}
+
+button {
+  background-color: #053b50;
 }
 
 .menu {
   font-size: 32px;
-  margin: 10px;
+  font-weight: bold;
   display: block;
-  width: 50px;
   cursor: pointer;
-  color: blue;
-  background-color: yelllow;
+  color: white;
   text-decoration: none;
   border: none;
+  text-align: right;
 }
 
 .nav_logo {
-  line-height: 24px;
-  color: white;
-  padding: 0.7rem;
-  margin: 0;
+  height: 30px;
 }
 
 .nav_item,
@@ -52,39 +50,47 @@ ul {
 }
 
 .nav a:hover {
-  background-color: grey;
-  color: black;
-  border-radius: 10px;
+  background-color: white;
+  color: #053b50;
+  border-radius: 4px;
   padding: 0.7rem;
   font-size: 1.3em;
 }
 
-/* Tampilan hamburger menu di layar kecil */
+.navbar-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
 @media screen and (max-width: 768px) {
   .nav_list {
-    display: none; /* Sembunyikan daftar menu saat layar kecil */
-    flex-direction: column; /* Tampilkan daftar menu secara vertikal */
+    display: none;
+    flex-direction: column;
     position: absolute;
     top: 70px;
     right: 0;
-    background-color: purple;
-    width: 100%;
-    transform: translateX(100%); /* Sembunyikan menu di luar layar */
+    background-color: #053b50;
+    width: 50%;
+    border-radius: 4px;
+    transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
   }
 
   .open .nav_list {
-    display: flex; /* Tampilkan daftar menu saat menu hamburger diklik */
-    transform: translateX(0); /* Geser menu ke dalam layar */
+    display: flex;
+    transform: translateX(0);
   }
 
   .nav_item {
     padding: 1em;
     text-align: center;
+    border-bottom: 0.5px solid white;
   }
 }
 
-/* Menyembunyikan tombol hamburger saat tampilan melebar (misalnya, layar dengan lebar lebih dari 768px) */
 @media screen and (min-width: 769px) {
   .menu {
     display: none;
