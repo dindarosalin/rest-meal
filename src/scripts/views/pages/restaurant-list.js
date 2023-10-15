@@ -1,28 +1,28 @@
+/* eslint-disable linebreak-style */
 class RestaurantList extends HTMLElement {
-    constructor() {
-        super();
-        this.attachShadow({ mode: 'open' });
-        this.render();
-    }
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+    this.render();
+  }
 
-    async render() {
-        const response = await fetch('../../public/data/DATA.json');
-        const data = await response.json();
+  async render() {
+    const response = await fetch('../../public/data/DATA.json');
+    const data = await response.json();
 
-        const restaurantList = document.createElement('ul');
-        restaurantList.classList.add('restaurant-list');
+    const restaurantList = document.createElement('ul');
+    restaurantList.classList.add('restaurant-list');
 
-        data.restaurants.forEach(restaurant => {
-            const restaurantItem = document.createElement('li');
-            restaurantItem.classList.add('restaurant-item');
+    data.restaurants.forEach((restaurant) => {
+      const restaurantItem = document.createElement('li');
+      restaurantItem.classList.add('restaurant-item');
 
-            restaurantItem.innerHTML = `
+      restaurantItem.innerHTML = `
             <link rel="stylesheet" href="../styles/restaurant-list.css">
             <article tabindex="0" class="card">
             <div class="card-img-container">
                 <img class="card-image" alt="${restaurant.name}" src="${restaurant.pictureId}"/>
             </div>
-
             <div class="card-content">
                 <div class="card-header">
                 <p class="card-content-title">${restaurant.name}</p>
@@ -37,11 +37,11 @@ class RestaurantList extends HTMLElement {
             </div>
             `;
 
-            restaurantList.appendChild(restaurantItem);
-        });
+      restaurantList.appendChild(restaurantItem);
+    });
 
-        this.shadowRoot.appendChild(restaurantList);
-    }
+    this.shadowRoot.appendChild(restaurantList);
+  }
 }
 
-customElements.define('restaurant-list', RestaurantList);
+customElements.define('my-restaurant-list', RestaurantList);

@@ -1,8 +1,9 @@
+/* eslint-disable linebreak-style */
 class Footer extends HTMLElement {
-    constructor() {
-      super();
-      this.attachShadow({ mode: 'open' });
-      this.shadowRoot.innerHTML = `
+  constructor() {
+    super();
+    this.attachShadow({ mode: 'open' });
+    this.shadowRoot.innerHTML = `
         <link rel="stylesheet" href="../styles/footer.css">
         <footer tabindex="0">
         <ul>
@@ -27,8 +28,7 @@ class Footer extends HTMLElement {
           </ul>
         </footer>
       `;
-    }
   }
-  
-  customElements.define('my-footer', Footer);
-  
+}
+
+customElements.define('my-footer', Footer);

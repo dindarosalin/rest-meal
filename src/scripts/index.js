@@ -1,9 +1,14 @@
-//Entry Point
-
+// index.js
 import 'regenerator-runtime';
 import '../styles/main.css';
+import App from './views/app';
 
-import './components/navbar';
-import './components/hero';
-import './components/footer';
-import './components/restaurant-list';
+const app = new App();
+
+window.addEventListener('hashchange', () => {
+  app.renderPage();
+});
+
+document.addEventListener('DOMContentLoaded', async () => {
+  app.renderPage();
+});

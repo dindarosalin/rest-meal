@@ -1,3 +1,5 @@
+/* eslint-disable quotes */
+/* eslint-disable no-underscore-dangle */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -22,14 +24,14 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
-        type: 'asset/resource'
-      }
+        type: 'asset/resource',
+      },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: path.resolve(__dirname, 'src/templates/index.html'),
+      template: path.resolve(__dirname, 'src/root/index.html'),
     }),
     new CopyWebpackPlugin({
       patterns: [

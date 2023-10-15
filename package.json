@@ -6,7 +6,8 @@
   "scripts": {
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "test": "karma start"
+    "test": "karma start",
+    "lint": "eslint ./src"
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,9 @@
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^5.0.1",
-    "eslint": "^8.17.0",
+    "eslint": "^8.51.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.28.1",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
     "jasmine-ajax": "^4.0.0",
@@ -40,9 +43,11 @@
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.15.1",
     "webpack-merge": "^5.9.0",
-    "whatwg-fetch": "^3.6.2"
+    "whatwg-fetch": "^3.6.2",
+    "workbox-webpack-plugin": "^7.0.0"
   },
   "dependencies": {
+    "idb": "^7.1.1",
     "regenerator-runtime": "^0.13.9"
   }
 }
