@@ -12,6 +12,7 @@ class Navbar extends HTMLElement {
   render() {
     this.shadowRoot.innerHTML = `
     <link rel="stylesheet" href="../styles/navbar.css">
+    
     <header class="header">
       <a href="/">
           <img src="../public/images/logos/icons8-restauran-64.png" class="nav_logo" alt="logo apk">
