@@ -1,4 +1,6 @@
 /* eslint-disable linebreak-style */
+import UrlParser from '../../routes/url-parser';
+
 class Hero extends HTMLElement {
   constructor() {
     super();
@@ -19,6 +21,10 @@ class Hero extends HTMLElement {
         </div>
     </div>
   `;
+  }
+
+  async afterRender(){
+
   }
 }
 

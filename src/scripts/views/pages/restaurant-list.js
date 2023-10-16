@@ -6,6 +6,10 @@ class RestaurantList extends HTMLElement {
     this.render();
   }
 
+  connectedCallback() {
+    this.render();
+  }
+
   async render() {
     const response = await fetch('../../public/data/DATA.json');
     const data = await response.json();
@@ -42,6 +46,11 @@ class RestaurantList extends HTMLElement {
 
     this.shadowRoot.appendChild(restaurantList);
   }
+
+  async afterRender() {
+    // Fungsi ini akan dipanggil setelah render()
+  }
 }
 
-customElements.define('my-restaurant-list', RestaurantList);
+customElements.define('restaurant-list', RestaurantList);
+export default RestaurantList;

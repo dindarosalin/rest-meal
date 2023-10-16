@@ -1,12 +1,11 @@
-import Hero from '../views/components/hero';
-import Home from '../views/pages/restaurant-list';
-import Upcoming from '../views/pages/favorite';
+import Home from '../views/pages/home';
+import Favorite from '../views/pages/favorite';
 import Detail from '../views/pages/detail';
 
 const routes = {
-  '/': Hero, // default page
+  '/': Home,
   '/home': Home,
-  '/upcoming': Upcoming,
+  '/favorite': Favorite,
   '/detail/:id': Detail,
 };
 

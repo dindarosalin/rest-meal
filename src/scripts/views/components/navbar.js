@@ -21,19 +21,23 @@ class Navbar extends HTMLElement {
       <nav id="drawer" class="nav">
       <button class="menu" id="menu" aria-label="button menu dropdown on mobile">☰</button>
           <ul class="nav_list">
-              <li class="nav_item"><a href="#">Home</a></li>
-              <li class="nav_item"><a href="#">Favorite</a></li>
+              <li class="nav_item" id="content"><a href="#/home">Home</a></li>
+              <li class="nav_item"><a href="#/favorite">Favorite</a></li>
               <li class="nav_item"><a href="https://github.com/dindarosalin" target="_blank" rel="noreferrer">About Us</a></li>
           </ul>
       </nav>
     </header>
     `;
-
     const menu = this.shadowRoot.querySelector('#menu');
     const drawer = this.shadowRoot.querySelector('#drawer');
     menu.addEventListener('click', (event) => {
       drawer.classList.toggle('open');
       event.stopPropagation();
+    });
+
+    const content = this.shadowRoot.querySelector('#content');
+    content.addEventListener('click', (event) => {
+      
     });
   }
 

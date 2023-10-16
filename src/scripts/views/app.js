@@ -1,35 +1,35 @@
 /* eslint-disable no-underscore-dangle */
-/* eslint-disable class-methods-use-this */
 import UrlParser from '../routes/url-parser';
 import routes from '../routes/routes';
-import Navbar from './components/navbar';
-import Footer from './components/footer';
+import ContentInitiator from './components/content-initiator';
 
 class App {
-  constructor() {
+  constructor({
+    button,
+    maincontent,
+    drawer,
+    hero,
+  }) {
+    this._button = button;
+    this._content = maincontent;
+    this._drawer = drawer;
+    this._hero = hero;
+
     this._initialAppShell();
-    this._navbar = Navbar;
-    this._footer = Footer;
   }
 
   _initialAppShell() {
-    const content = document.querySelector('#maincontent');
-    const navbar = document.createElement('my-navbar');
-    const hero = document.createElement('my-hero');
-    const footer = document.createElement('my-footer');
-
-    content.appendChild(navbar);
-    content.appendChild(hero);
-    content.appendChild(footer);
-
-    this._content = content;
+    ContentInitiator.init({
+      button: this._button,
+      content: this._content,
+      drawer: this._drawer,
+      hero: this._hero,
+    });
   }
 
-  async render() {
+  async renderPage() {
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];
-
-    // Perbaiki _content menjadi content
     this._content.innerHTML = await page.render();
     await page.afterRender();
   }
