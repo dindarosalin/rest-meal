@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 const NavInitiator = {
   init({ button, drawer, content }) {
     button.addEventListener('click', (event) => {

@@ -6,8 +6,7 @@ class Footer extends HTMLElement {
 
   render(){
     this.innerHTML = `
-    <link rel="stylesheet" href="../styles/footer.css">
-    <footer tabindex="0">
+    <footer>
     <ul>
       <li>Copyright © 2023 | </li>
       <li> Rest Meal @dindarosalin | </li>

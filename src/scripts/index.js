@@ -1,4 +1,3 @@
-// index.js
 import 'regenerator-runtime';
 import '../styles/main.css';
 
@@ -7,7 +6,7 @@ import './views/components/footer';
 import './views/components/hero';
 
 import App from './views/app';
-import swRegister from './utils/sw-register';
+import swRegister from '../scripts/utils/sw-register';
 
 const app = new App({
   button: document.querySelector('#hamburgerButton'),
@@ -21,5 +20,6 @@ window.addEventListener('hashchange', () => {
 
 window.addEventListener('load', () => {
   app.renderPage();
+  // Register the Service Worker after the app has been created.
   swRegister();
 });

@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import UrlParser from '../routes/url-parser';
 import routes from '../routes/routes';
 import NavInitiator from '../utils/nav-initiator';

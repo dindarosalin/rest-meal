@@ -4,7 +4,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const serviceWorkerWebpackPlugin = require("serviceworker-webpack-plugin");
+const ServiceWorkerWebpackPlugin = require("serviceworker-webpack-plugin");
 
 module.exports = {
   entry: {
@@ -30,6 +30,9 @@ module.exports = {
     ],
   },
   plugins: [
+    new ServiceWorkerWebpackPlugin({
+      entry: path.join(__dirname, 'src/scripts/sw.js'),
+    }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, 'src/root/index.html'),
@@ -41,9 +44,6 @@ module.exports = {
           to: path.resolve(__dirname, 'dist/'),
         },
       ],
-    }),
-    new ServiceWorkerWebpackPlugin({
-      entry: path.join(__dirname, 'src/scripts/sw.js'),
     }),
   ],
 };
