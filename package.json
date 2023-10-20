@@ -21,6 +21,7 @@
     "@babel/preset-env": "^7.18.2",
     "babel-loader": "^8.2.5",
     "copy-webpack-plugin": "^11.0.0",
+    "core-js": "^3.33.0",
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^5.0.1",
     "eslint": "^8.51.0",
@@ -37,6 +38,7 @@
     "karma-sourcemap-loader": "^0.3.8",
     "karma-webpack": "^5.0.0",
     "mini-css-extract-plugin": "^2.7.6",
+    "regenerator-runtime": "^0.14.0",
     "style-loader": "^3.3.1",
     "watch": "^1.0.2",
     "webpack": "^5.88.2",
@@ -48,6 +50,6 @@
   },
   "dependencies": {
     "idb": "^7.1.1",
-    "regenerator-runtime": "^0.13.9"
+    "serviceworker-webpack-plugin": "^1.0.1"
   }
 }

@@ -7,18 +7,19 @@ import './views/components/footer';
 import './views/components/hero';
 
 import App from './views/app';
+import swRegister from './utils/sw-register';
 
 const app = new App({
-  button: document.querySelector('#menu'),
-  content: document.querySelector('main'),
-  drawer: document.querySelector('#drawer'),
-  hero: document.querySelector('.hero'),
+  button: document.querySelector('#hamburgerButton'),
+  drawer: document.querySelector('#navigationDrawer'),
+  content: document.querySelector('#mainContent'),
 });
 
 window.addEventListener('hashchange', () => {
-  app.renderPage(url);
+  app.renderPage();
 });
 
 window.addEventListener('load', () => {
   app.renderPage();
+  swRegister();
 });

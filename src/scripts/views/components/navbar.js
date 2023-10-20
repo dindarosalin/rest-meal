@@ -1,53 +1,27 @@
 /* eslint-disable linebreak-style */
 class Navbar extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-    window.addEventListener('scroll', this.handleScroll.bind(this));
-  }
-
   connectedCallback() {
     this.render();
   }
 
   render() {
-    this.shadowRoot.innerHTML = `
+    this.innerHTML = `
     <link rel="stylesheet" href="../styles/navbar.css">
-
-    <header class="header">
+    <div class="Navbar_menu">
+        <button aria-label="Hamburger Button" id="hamburgerButton">☰</button>
+      </div>
+      <div class="Navbar_brand">
       <a href="/">
-          <img src="../public/images/logos/icons8-restauran-64.png" class="nav_logo" alt="logo apk">
-      </a>
-      <nav id="drawer" class="nav">
-      <button class="menu" id="menu" aria-label="button menu dropdown on mobile">☰</button>
-          <ul class="nav_list">
-              <li class="nav_item" id="content"><a href="#/home">Home</a></li>
-              <li class="nav_item"><a href="#/favorite">Favorite</a></li>
-              <li class="nav_item"><a href="https://github.com/dindarosalin" target="_blank" rel="noreferrer">About Us</a></li>
-          </ul>
-      </nav>
-    </header>
+      <img src="../public/images/logos/icons8-restauran-64.png" class="nav_logo" alt="logo apk"></a>
+      </div>
+      <nav id="navigationDrawer" class="Navbar_navigation">
+      <ul>
+        <li><a href="#/home">Home</a></li>
+        <li><a href="#/favorite">Favorite</a></li>
+        <li><a href="https://github.com/dindarosalin" target="_blank" rel="noreferrer">About Us</a></li>
+      </ul>
+    </nav>
     `;
-    const menu = this.shadowRoot.querySelector('#menu');
-    const drawer = this.shadowRoot.querySelector('#drawer');
-    menu.addEventListener('click', (event) => {
-      drawer.classList.toggle('open');
-      event.stopPropagation();
-    });
-
-    const content = this.shadowRoot.querySelector('#content');
-    content.addEventListener('click', (event) => {
-      
-    });
-  }
-
-  handleScroll() {
-    const navbar = this.shadowRoot.querySelector('.header');
-    if (window.scrollY > 0) {
-      navbar.classList.add('navbar-fixed');
-    } else {
-      navbar.classList.remove('navbar-fixed');
-    }
   }
 }
 

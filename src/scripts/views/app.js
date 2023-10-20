@@ -1,29 +1,22 @@
 /* eslint-disable no-underscore-dangle */
 import UrlParser from '../routes/url-parser';
 import routes from '../routes/routes';
-import ContentInitiator from './components/content-initiator';
+import NavInitiator from '../utils/nav-initiator';
 
 class App {
-  constructor({
-    button,
-    maincontent,
-    drawer,
-    hero,
-  }) {
+  constructor({ button, drawer, content }) {
     this._button = button;
-    this._content = maincontent;
     this._drawer = drawer;
-    this._hero = hero;
+    this._content = content;
 
     this._initialAppShell();
   }
 
   _initialAppShell() {
-    ContentInitiator.init({
+    NavInitiator.init({
       button: this._button,
-      content: this._content,
       drawer: this._drawer,
-      hero: this._hero,
+      content: this._content,
     });
   }
 
@@ -32,6 +25,16 @@ class App {
     const page = routes[url];
     this._content.innerHTML = await page.render();
     await page.afterRender();
+    
+    const skipToContent = document.querySelector(".skip-to-content");
+    const mainContent = document.getElementById("mainContent");
+    skipToContent.addEventListener("click", (e) => {
+      e.preventDefault();
+      mainContent.scrollIntoView({
+        behavior: "smooth",
+      });
+      skipToContent.blur();
+    });
   }
 }
 

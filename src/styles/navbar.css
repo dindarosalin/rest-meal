@@ -1,98 +1,104 @@
-.header {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 5%;
-  background: #053b50;
-}
-
-button {
-  background-color: #053b50;
-}
-
-.menu {
-  font-size: 32px;
-  font-weight: bold;
-  display: block;
+.Navbar .Navbar_menu button {
+  background-color: transparent;
+  border: none;
+  font-size: 28px;
+  padding: 14px;
   cursor: pointer;
   color: white;
-  text-decoration: none;
-  border: none;
-  text-align: right;
 }
 
-.nav_logo {
-  height: 30px;
+.Navbar {
+  padding: 8px 16px;
+  background-color: #032541;
+  color: white;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
-.nav_item,
-a,
-ul {
-  text-decoration: none;
-  list-style: none;
+.Navbar .Navbar_menu {
+  display: flex;
+  align-items: center;
   color: white;
 }
 
-.nav_item {
-  box-sizing: border-box;
-  line-height: 24px;
-  display: inline-block;
-}
-
-.nav_item a {
-  padding: 0.9rem;
-  font-size: 1.3em;
-}
-
-.nav_list {
-  width: 100%;
-  padding: 0;
-  margin: 0;
-}
-
-.nav a:hover {
-  background-color: white;
-  color: #053b50;
-  border-radius: 4px;
-  padding: 0.7rem;
-  font-size: 1.3em;
-}
-
-.navbar-fixed {
-  position: fixed;
-  top: 0;
+.Navbar .Navbar_navigation.open {
   left: 0;
-  right: 0;
-  z-index: 1000;
+  width: 100%;
 }
 
-@media screen and (max-width: 768px) {
-  .nav_list {
+.Navbar .Navbar_brand {
+  display: flex;
+  align-items: center;
+}
+
+.Navbar .Navbar_navigation {
+  position: absolute;
+  top: 80px;
+  left: -180px;
+  width: 150px;
+  transition: all 0.3s;
+  padding: 8px;
+  background-color: rgba(3, 37, 65, 0.7);
+ color: white;
+  overflow: hidden;
+  text-align: center;
+}
+
+.Navbar .Navbar_navigation ul li a:hover{
+  color: blueviolet;
+}
+.Navbar .Navbar_brand h1 {
+  color: white;
+  text-transform: uppercase;
+  font-size: 22px;
+  user-select: none;
+}
+
+.Navbar .Navbar_navigation ul li a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  margin-bottom: 5px;
+  width: 100%;
+  font-weight: bold;
+  transition: background-color 0.5s ease;
+}
+
+@media screen and (min-width: 650px) {
+  .Navbar {
+    grid-template-columns: 1fr auto;
+    padding: 8px 32px;
+  }
+
+  .Navbar .Navbar_brand h1 {
+    font-size: 1.5em;
+  }
+
+  .Navbar .Navbar_menu {
     display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background-color: #053b50;
-    width: 50%;
-    border-radius: 4px;
-    transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
   }
 
-  .open .nav_list {
-    display: flex;
-    transform: translateX(0);
+  .Navbar .Navbar_navigation ul li {
+    display: inline-block;
   }
-
-  .nav_item {
-    padding: 1em;
+  .restoran .restoran_description {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  .Navbar .Navbar_navigation ul li a {
+    display: inline-block;
+    width: 120px;
     text-align: center;
-    border-bottom: 0.5px solid white;
+    margin: 0;
   }
-}
-
-@media screen and (min-width: 769px) {
-  .menu {
-    display: none;
+  .Navbar .Navbar_navigation {
+    position: static;
+    width: 100%;
   }
 }

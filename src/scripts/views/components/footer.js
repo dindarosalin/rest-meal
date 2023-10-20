@@ -1,16 +1,11 @@
 /* eslint-disable linebreak-style */
 class Footer extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
-  }
-
   connectedCallback() {
     this.render();
   }
 
   render(){
-    this.shadowRoot.innerHTML = `
+    this.innerHTML = `
     <link rel="stylesheet" href="../styles/footer.css">
     <footer tabindex="0">
     <ul>

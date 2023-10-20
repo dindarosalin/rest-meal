@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Onest:wght@200;400;700&display=swap");
-
+@import url("navbar.css");
+@import url("hero.css");
+@import url("footer.css");
 * {
   padding: 0;
   margin: 0;
