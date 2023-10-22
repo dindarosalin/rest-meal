@@ -4,25 +4,26 @@ import {
   createRestaurantDetailTemplate,
 } from '../templates/template-creator';
 import LikeButtonPres from '../../utils/like-button-presenter';
-import PostReview from '../../utils/postreview-initiator.js';
+import PostReview from '../../utils/postreview-initiator';
 import FavoriteRestoDB from '../../../public/data/favorite-resto-db';
 
 const Detail = {
   async render() {
     return `
     <div class="main">
-      <h2 tabindex="0" class="explore-restaurant__label">Detail Restuarant</h2>
+      <h2 tabindex="0" class="explore-restaurant__label">Detail Resto</h2>
         <section id="detail-rest"></section>
         <div class="like" id="likeButtonContainer"></div>
         <div class="form-review">
+        <h4>Berikan Review</h4>
           <form>
             <div class="mb-3">
               <label for="inputName" class="form-label">Name</label>
-              <input name="inputName" type="text" class="form-control" id="inputName">
+              <input name="inputName" type="text" class="form-control" id="inputName" required>
             </div>
             <div class="mb-3">
               <label for="inputReview" class="form-label">Review</label>
-              <input name="inputReview" type="text" class="form-control" id="inputReview">
+              <textarea name="inputReview" class="form-control" id="inputReview" required></textarea>
             </div>
             <button id="submit-review" type="submit" class="btn">Submit</button>
           </form>
@@ -38,10 +39,9 @@ const Detail = {
     restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
 
     // favorite
-    LikeButtonPres
-  .init({
+    LikeButtonPres.init({
       likeButtonContainer: document.getElementById('likeButtonContainer'),
-      FavoriteRestoDB: FavoriteRestoDB,
+      favoriteRestaurants: FavoriteRestoDB,
       restaurant: {
         id: restaurant.id,
         name: restaurant.name,
@@ -62,7 +62,7 @@ const Detail = {
     const skipLinkElem = document.querySelector('.skip-link');
     skipLinkElem.addEventListener('click', (event) => {
       event.preventDefault();
-      document.querySelector('#main-content').focus();
+      document.querySelector('#mainContent').focus();
     });
   },
 

@@ -1,12 +1,14 @@
 import 'regenerator-runtime';
 import '../styles/main.css';
+import '../styles/responsive.css';
+import '../styles/navbar.css';
 
 import './views/components/navbar';
 import './views/components/footer';
 import './views/components/hero';
 
 import App from './views/app';
-import swRegister from '../scripts/utils/sw-register';
+import swRegister from './utils/sw-register';
 
 const app = new App({
   button: document.querySelector('#hamburgerButton'),

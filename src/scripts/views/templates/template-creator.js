@@ -1,22 +1,26 @@
 import CONFIG from '../../globals/config';
 
 const createRestaurantItemTemplate = (restaurant) => `
-        <article tabindex="0" class="card">
-            <div class="card-img-container">
-                  <img class="card-image lazyload" data-src="${CONFIG.BASE_IMAGE_SMALL_URL + restaurant.pictureId}" alt="${restaurant.name}"/>
-                <span class="card-rating">
-                    <i title="ratings" class="fa fa-star"></i>
-                    <span>${restaurant.rating}</span>
-                </span>
-            </div>
-
-            <div class="card-content">
-                <p class="card-content-title"><a href="${`/#/detail/${restaurant.id}`}">${restaurant.name} - ${restaurant.city}</a></p>
-                <p class="card-content-title-description">Description: </p>
-                <p class="card-content-description">${restaurant.description}</p>
-            </div>
-        </article>
+<div class="restaurant-list">
+<article tabindex="0" class="card">
+<div class="card-img-container">
+    <img class="card-image" alt="${restaurant.name}" src="${CONFIG.BASE_IMAGE_MEDIUM_URL + restaurant.pictureId}"/>
+</div>
+<div class="card-content">
+    <div class="card-header">
+    <p class="card-content-title">${restaurant.name}</p>
+    <span class="card-rating">
+        <img src="../public/images/logos/icons8-star-48.png" alt="card-rating" class="star-icon">
+        <span class="rating">${restaurant.rating}</span>
+    </span>
+    </div>
+    <p class="card-content-city">${restaurant.city} </p>
+    <p class="card-content-description">${restaurant.description}</p>
+    <a href="${`/#/detail/${restaurant.id}`}" class="card-location">Detail Resto</a>
+</div>
+</div>
 `;
+
 const createSkeletonRestaurantTemplate = (count) => {
   let skeleton = '';
 
@@ -38,99 +42,134 @@ const createSkeletonRestaurantTemplate = (count) => {
 };
 const createRestaurantDetailTemplate = (restaurant) => `
 <div class="detail">
-<div tabindex="0" class="container-info">
-<div class="img-container">
-<picture>
-<source class="detail-img lazyload" srcset="${CONFIG.BASE_IMAGE_SMALL_URL + restaurant.pictureId}" type="image/webp" media="all and (max-width: 300px)" />        
-<source class="detail-img lazyload" srcset="${CONFIG.BASE_IMAGE_SMALL_URL + restaurant.pictureId}" type="image/jpeg" media="all and (max-width: 300px)" />
-<source class="detail-img lazyload" srcset="${CONFIG.BASE_IMAGE_MEDIUM_URL + restaurant.pictureId}" type="image/webp" media="all and (min-width: 700px) and (max-width: 900px)" />    
-<source class="detail-img lazyload" srcset="${CONFIG.BASE_IMAGE_MEDIUM_URL + restaurant.pictureId}" type="image/jpeg" media="all and (min-width: 700px) and (max-width: 900px)" />
-<source class="detail-img lazyload" srcset="${CONFIG.BASE_IMAGE_LARGE_URL + restaurant.pictureId}" type="image/webp" media="all and (min-width: 901px)" />        
-<source class="detail-img lazyload" srcset="${CONFIG.BASE_IMAGE_LARGE_URL + restaurant.pictureId}" type="image/jpeg" media="all and (min-width: 901px)" />
-<img class="detail-img lazyload" data-src="${CONFIG.BASE_IMAGE_MEDIUM_URL + restaurant.pictureId}" alt="${restaurant.name}"/>
-</picture>
-</div>
+  <div tabindex="0" class="container-info">
+    <div class="img-container">
+      <picture>
+        <source
+          class="detail-img lazyload"
+          srcset="${CONFIG.BASE_IMAGE_SMALL_URL + restaurant.pictureId}"
+          type="image/webp"
+          media="all and (max-width: 300px)"
+        />
+        <source
+          class="detail-img lazyload"
+          srcset="${CONFIG.BASE_IMAGE_SMALL_URL + restaurant.pictureId}"
+          type="image/jpeg"
+          media="all and (max-width: 300px)"
+        />
+        <source
+          class="detail-img lazyload"
+          srcset="${CONFIG.BASE_IMAGE_MEDIUM_URL + restaurant.pictureId}"
+          type="image/webp"
+          media="all and (min-width: 700px) and (max-width: 900px)"
+        />
+        <source
+          class="detail-img lazyload"
+          srcset="${CONFIG.BASE_IMAGE_MEDIUM_URL + restaurant.pictureId}"
+          type="image/jpeg"
+          media="all and (min-width: 700px) and (max-width: 900px)"
+        />
+        <source
+          class="detail-img lazyload"
+          srcset="${CONFIG.BASE_IMAGE_LARGE_URL + restaurant.pictureId}"
+          type="image/webp"
+          media="all and (min-width: 901px)"
+        />
+        <source
+          class="detail-img lazyload"
+          srcset="${CONFIG.BASE_IMAGE_LARGE_URL + restaurant.pictureId}"
+          type="image/jpeg"
+          media="all and (min-width: 901px)"
+        />
+        <img class="detail-img lazyload" data-src="${CONFIG.BASE_IMAGE_MEDIUM_URL + restaurant.pictureId}" alt="${restaurant.name}" />
+      </picture>
+    </div>
 
-<ul class="detail-info">
-  <li class="resto-name">
-    <i title="restaurant" class="fas fa-store-alt icon-primary"></i>
-    <p class="detail-name-address-rating">${restaurant.name}</p>
-    </li>
+    <ul class="detail-info">
+      <li class="resto-name">
+        <i title="restaurant" class="fas fa-store-alt icon-primary"></i>
+        <p class="detail-name-address-rating-description">${restaurant.name}</p>
+      </li>
 
-  <li class="resto-address">
-    <i title="address" class="fas fa-map-marker-alt icon-primary"></i>
-    <p class="detail-name-address-rating">${restaurant.address}, ${restaurant.city}</p>
-    </li>
+      <li class="resto-address">
+        <i title="address" class="fas fa-map-marker-alt icon-primary"></i>
+        <p class="detail-name-address-rating-description">${restaurant.address}, ${restaurant.city}</p>
+      </li>
 
-  <li class="resto-rating">
-    <i title="ratings" class="fas fa-star icon-primary"></i>
-    <p class="detail-name-address-rating">${restaurant.rating}</p>
-  </li>
-  <h4> Description: </h4>
-  <li><p class="detail-desc">${restaurant.description}</p></li>
+      <li class="resto-rating">
+        <i title="ratings" class="fas fa-star icon-primary"></i>
+        <p class="detail-name-address-rating-description">${restaurant.rating}</p>
+      </li>
 
-  <li class="resto-category">${restaurant.categories
-    .map(
-      (category) => `
-        <span class="category">${category.name}</span>
-      `,
-    )
-    .join('')}
-  </li>
-</ul>
-</div>
-<h3 tabindex="0" >Menu</h3>
+      <li class="resto-description">
+        <i title="descriptions" class="icon-primary"></i>
+        <p class="detail-name-address-rating-description">${restaurant.description}</p>
+      </li>
+    </ul>
+  </div>
 
-<div tabindex="0" class="detail-menu">
-  <div class="detail-food">
-    <h4>Food</h4>
-    <ul>
-      ${restaurant.menus.foods
+    <div tabindex="0" class="detail-menu">
+      <div class="detail-food">
+        <h4>Food</h4>
+        <table>
+          <tr>
+            <th>Food Item</th>
+          </tr>
+          ${restaurant.menus.foods
     .map(
       (food) => `
-            <li><p>${food.name}</p></li>
-          `,
+                <tr>
+                  <td>${food.name}</td>
+                </tr>
+              `,
     )
     .join('')}
-    <ul>
-  </div>
+        </table>
+      </div>
 
-  <div class="detail-drink">
-    <h4>Drink</h4>
-    <ul>
-      ${restaurant.menus.drinks
+      <div class="detail-drink">
+        <h4>Drink</h4>
+        <table>
+          <tr>
+            <th>Drink Item</th>
+          </tr>
+          ${restaurant.menus.drinks
     .map(
       (drink) => `
-            <li><p>${drink.name}</p></li>
-          `,
+                <tr>
+                  <td>${drink.name}</td>
+                </tr>
+              `,
     )
     .join('')}
-    <ul>
-  </div>
-</div>
-
-<h3 tabindex="0" class="title-review">Reviews</h3>
-
-<div tabindex="0" class="detail-review">
-${restaurant.customerReviews
+        </table>
+      </div>
+    </div>
+  <div class="container-review">
+      <h3 tabindex="0" class="title-review">Reviews</h3>
+      <div tabindex="0" class="detail-review">
+        <table>
+          <tr>
+            <th>User</th>
+            <th>Date</th>
+            <th>Review</th>
+          </tr>
+          ${restaurant.customerReviews
     .map(
       (review) => `
-      <div class="detail-review-item">
-        <div class="header-review">
-          <p class="name-review"><i title="restaurant" class="fa fa-user-circle" style="font-size:1.3em; padding-right:10px;"></i>${review.name}</p>
-
-          <p class="date-review">${review.date}</p>
-        </div>
-
-        <div class="body-review">
-          ${review.review}
-        </div>
-      </div>
-    `,
+                <tr>
+                  <td>${review.name}</td>
+                  <td>${review.date}</td>
+                  <td>${review.review}</td>
+                </tr>
+              `,
     )
     .join('')}
+        </table>
+      </div>
+    </div>
 </div>
-</div>
+
 `;
 
 const createLikeRestaurantButtonTemplate = () => `

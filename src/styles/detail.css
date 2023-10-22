@@ -1,0 +1,172 @@
+/* CSS untuk detail restaurant */
+.detail {
+  padding: 20px;
+  margin: 2em;
+}
+
+.detail-info {
+  list-style: none;
+}
+
+.detail-img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.container-info {
+  background-color: white;
+  border-radius: 4px;
+  margin: 1.5em;
+  padding: 1.5em;
+}
+
+.detail-menu {
+  background-color: white;
+  border-radius: 4px;
+  margin: 1.5em;
+  padding: 1.5em;
+}
+
+.container-review {
+  background-color: white;
+  border-radius: 4px;
+  margin: 1.5em;
+  padding: 1.5em;
+}
+
+.detail-info li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.icon-primary {
+  font-size: 1.2em;
+  margin-right: 10px;
+}
+
+.detail-name-address-rating-description {
+  margin: 0;
+}
+
+.detail-menu h4 {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  border-radius: 4px
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+}
+
+.title-review {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.detail-review {
+  margin-top: 10px;
+}
+
+.detail-review-item {
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.name-review {
+  font-weight: bold;
+  margin: 0;
+}
+
+.date-review {
+  margin: 0;
+}
+
+/* FORM */
+.form-review {
+  background-color: white;
+  border-radius: 4px;
+  margin: 1.5em;
+  padding: 1.5em;
+}
+
+.form-review h4 {
+  font-size: large;
+  font-weight: bold;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.738em;
+  font-size: 1.37em;
+  border: 1px solid #ddd;
+  border-radius: 1em;
+}
+
+.form-label {
+  display: block;
+  font-size: 1.3em;
+  margin-bottom: 0.5em;
+  text-align: left;
+}
+
+.mb-3 {
+  margin-bottom: 1.3em;
+  margin-top: 0.5em;
+}
+
+.btn {
+  display: block;
+  width: 100px;
+  padding: 0.7em;
+  font-size: 1.37em;
+  color: white;
+  background-color: #053b50;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* LIKE BUTOON */
+.like {
+  font-size: 18px;
+  background-color: #053b50;
+  color: white;
+  border: 0;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 10;
+}
+
+/* SKELETON */
+.skeleton {
+  user-select: none;
+  background-color: #eeeeee;
+  color: #eeeeee;
+}

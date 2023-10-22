@@ -1,18 +1,68 @@
-import CacheHelper from './utils/cache-helper';
-import 'regenerator-runtime';
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable no-restricted-globals */
+// eslint-disable-next-line linebreak-style
+/* eslint-disable no-console */
+/* eslint-disable linebreak-style */
+import { precacheAndRoute } from 'workbox-precaching';
+import { registerRoute, Route } from 'workbox-routing';
+import { StaleWhileRevalidate } from 'workbox-strategies';
 
-const {
-  assets,
-} = global.serviceWorkerOption;
+// Do precaching
+precacheAndRoute(self.__WB_MANIFEST);
 
-self.addEventListener('install', (event) => {
-  event.waitUntil(CacheHelper.cachingAppShell([...assets, './']));
+const themoviedbApi = new Route(
+  ({ url }) => url.href.startsWith('https://api.themoviedb.org/3/'),
+  new StaleWhileRevalidate({
+    cacheName: 'themoviedb-api',
+  }),
+);
+
+const themoviedbImageApi = new Route(
+  ({ url }) => url.href.startsWith('https://image.tmdb.org/t/p/w500/'),
+  new StaleWhileRevalidate({
+    cacheName: 'themoviedb-image-api',
+  }),
+);
+
+registerRoute(themoviedbApi);
+registerRoute(themoviedbImageApi);
+
+self.addEventListener('install', () => {
+  console.log('Service Worker: Installed');
+  self.skipWaiting();
 });
 
-self.addEventListener('activate', (event) => {
-  event.waitUntil(CacheHelper.deleteOldCache());
+self.addEventListener('push', (event) => {
+  console.log('Service Worker: Pushed');
+
+  const notificationMovie = event.data.json();
+  const notificationData = {
+    title: notificationMovie.title,
+    options: {
+      body: notificationMovie.options.body,
+      icon: notificationMovie.options.icon,
+      image: notificationMovie.options.image,
+    },
+  };
+
+  const showNotification = self.registration.showNotification(
+    notificationData.title,
+    notificationData.options,
+  );
+
+  event.waitUntil(showNotification);
 });
 
-self.addEventListener('fetch', (event) => {
-  event.respondWith(CacheHelper.revalidateCache(event.request));
+self.addEventListener('notificationclick', (event) => {
+  const clickedNotification = event.notification;
+  clickedNotification.close();
+
+  const chainPromise = async () => {
+    console.log('Notification has been clicked');
+    await self.clients.openWindow('https://linkedin/in/dindarosalin');
+  };
+
+  event.waitUntil(chainPromise());
+// eslint-disable-next-line linebreak-style
 });

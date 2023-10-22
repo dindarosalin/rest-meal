@@ -1,3 +1,5 @@
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable import/named */
 import FavoriteRestoDB from '../../public/data/favorite-resto-db';
 import {
   createLikeButtonTemplate,

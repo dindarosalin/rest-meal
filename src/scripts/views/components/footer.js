@@ -4,7 +4,7 @@ class Footer extends HTMLElement {
     this.render();
   }
 
-  render(){
+  render() {
     this.innerHTML = `
     <footer>
     <ul>

@@ -1,6 +1,7 @@
-import FavoriteRestoDB from '../../../public/data/favorite-resto-db';
+import RestoSources from '../../../public/data/resto-sources';
 import {
-  createRestaurantItemTemplate, createSkeletonRestaurantTemplate,
+  createRestaurantItemTemplate,
+  createSkeletonRestaurantTemplate,
 } from '../templates/template-creator';
 
 const Home = {
@@ -18,7 +19,7 @@ const Home = {
   },
 
   async afterRender() {
-    const listRestaurant = await FavoriteRestoDB.getRestaurants();
+    const listRestaurant = await RestoSources.getRestaurants();
     const restaurantContainer = document.getElementById('explore-restaurant-list');
     restaurantContainer.innerHTML = '';
     listRestaurant.forEach((restaurant) => {

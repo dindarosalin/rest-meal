@@ -42,9 +42,3 @@
   font-size: 24px;
   font-weight: 400;
 }
-
-@media (min-width: 1200px) {
-  .hero::before {
-    background-size: 1000px;
-  }
-}
