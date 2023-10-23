@@ -9,7 +9,7 @@ class Navbar extends HTMLElement {
     <div class="Navbar">
     <header class="header">
       <a href="/">
-          <img src="../public/images/logos/icons8-restauran-64-light.png" class="nav_logo" alt="logo apk">
+          <img src="../images/logos/icons8-restauran-64-light.png" class="nav_logo" alt="logo apk">
       </a>
       <nav id="navigationDrawer" class="nav">
       <button class="menu" id="hamburgerButton" aria-label="button menu dropdown on mobile">☰</button>
