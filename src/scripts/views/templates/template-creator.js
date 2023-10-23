@@ -87,22 +87,19 @@ const createRestaurantDetailTemplate = (restaurant) => `
 
     <ul class="detail-info">
       <li class="resto-name">
-        <i title="restaurant" class="fas fa-store-alt icon-primary"></i>
-        <p class="detail-name-address-rating-description">${restaurant.name}</p>
+        <p class="detail-name-address-rating-description" id="name">${restaurant.name}</p>
       </li>
 
       <li class="resto-address">
-        <i title="address" class="fas fa-map-marker-alt icon-primary"></i>
-        <p class="detail-name-address-rating-description">${restaurant.address}, ${restaurant.city}</p>
-      </li>
+        <p class="detail-name-address-rating-description" id="address">${restaurant.address}, ${restaurant.city}</p>
+        </li>
 
       <li class="resto-rating">
         <i title="ratings" class="fas fa-star icon-primary"></i>
-        <p class="detail-name-address-rating-description">${restaurant.rating}</p>
+        <p class="detail-name-address-rating-description" id="rating">${restaurant.rating}</p>
       </li>
 
       <li class="resto-description">
-        <i title="descriptions" class="icon-primary"></i>
         <p class="detail-name-address-rating-description">${restaurant.description}</p>
       </li>
     </ul>
@@ -174,13 +171,13 @@ const createRestaurantDetailTemplate = (restaurant) => `
 
 const createLikeRestaurantButtonTemplate = () => `
 <button aria-label="like this restaurant" id="likeButton" class="like">
-<i class="fa fa-heart-o" aria-hidden="true"></i>
+<i class="fa fa-heart-o"></i>
 </button>
 `;
 
 const createUnlikeRestaurantButtonTemplate = () => `
 <button aria-label="unlike this restaurant" id="likeButton" class="like">
-<i class="fa fa-heart" aria-hidden="true"></i>
+<i class="fa fa-heart"></i>
 </button>
 `;
 

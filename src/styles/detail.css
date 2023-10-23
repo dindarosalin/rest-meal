@@ -2,39 +2,38 @@
 .detail {
   padding: 20px;
   margin: 2em;
-}
-
-.detail-info {
-  list-style: none;
-}
-
-.detail-img {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  border-radius: 4px;
-  margin-bottom: 20px;
+  margin-top: 0px;
 }
 
 .container-info {
   background-color: white;
   border-radius: 4px;
-  margin: 1.5em;
   padding: 1.5em;
+}
+
+.detail-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.detail-info {
+  list-style: none;
+  color: #053b50;
 }
 
 .detail-menu {
   background-color: white;
   border-radius: 4px;
-  margin: 1.5em;
   padding: 1.5em;
 }
 
 .container-review {
   background-color: white;
   border-radius: 4px;
-  margin: 1.5em;
   padding: 1.5em;
+  margin-top: 15px;
 }
 
 .detail-info li {
@@ -46,10 +45,28 @@
 .icon-primary {
   font-size: 1.2em;
   margin-right: 10px;
+  color: yellow;
 }
 
 .detail-name-address-rating-description {
   margin: 0;
+}
+
+.resto-name {
+  font-weight: bold;
+  font-size: large;
+}
+
+.resto-address {
+  font-weight: bold;
+}
+
+.resto-rating {
+  font-weight: bold;
+  font-size: large;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .detail-menu h4 {

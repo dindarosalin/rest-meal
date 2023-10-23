@@ -11,7 +11,6 @@ const Detail = {
   async render() {
     return `
     <div class="main">
-      <h2 tabindex="0" class="explore-restaurant__label">Detail Resto</h2>
         <section id="detail-rest"></section>
         <div class="like" id="likeButtonContainer"></div>
         <div class="form-review">

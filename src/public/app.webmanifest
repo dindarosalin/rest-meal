@@ -15,8 +15,8 @@
       "purpose": "any maskable"
     },
     {
-      "src": "../images/logos/icons8-restauran-64",
-      "sizes": "64x64",
+      "src": "../images/logos/icon-500",
+      "sizes": "500x500",
       "type": "image/png",
       "purpose": "any maskable"
     }

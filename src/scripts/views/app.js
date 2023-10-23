@@ -26,7 +26,7 @@ class App {
     this._content.innerHTML = await page.render();
     await page.afterRender();
 
-    const skipToContent = document.querySelector('.skip-to-content');
+    const skipToContent = document.querySelector('.skip-link');
     const mainContent = document.getElementById('mainContent');
     skipToContent.addEventListener('click', (e) => {
       e.preventDefault();
