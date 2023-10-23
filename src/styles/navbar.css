@@ -24,7 +24,8 @@ button {
 }
 
 .nav_logo {
-  height: 30px;
+  min-height: 44px;
+  max-width: 50px;
 }
 
 .nav_item,

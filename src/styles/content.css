@@ -76,10 +76,15 @@
   border: 1px solid #F0F0F0;
 }
 
-.card-location {
+.card-detail {
   color: blue;
   font-style: italic;
   text-decoration: underline;
+  font-size: medium;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .star-icon {

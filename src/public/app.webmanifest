@@ -15,8 +15,44 @@
       "purpose": "any maskable"
     },
     {
-      "src": "../images/logos/icon-500",
-      "sizes": "500x500",
+      "src": "../images/logos/icons8-restauran-96",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "../images/logos/icons8-restauran-128",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "../images/logos/icons8-restauran-144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "../images/logos/icons8-restauran-152",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "../images/logos/icons8-restauran-192",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "../images/logos/icons8-restauran-384",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "../images/logos/icons8-restauran-512",
+      "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     }

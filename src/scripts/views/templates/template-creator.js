@@ -16,7 +16,7 @@ const createRestaurantItemTemplate = (restaurant) => `
     </div>
     <p class="card-content-city">${restaurant.city} </p>
     <p class="card-content-description">${restaurant.description}</p>
-    <a href="${`/#/detail/${restaurant.id}`}" class="card-location">Detail Resto</a>
+    <a href="${`/#/detail/${restaurant.id}`}" class="card-detail">Detail Resto</a>
 </div>
 </div>
 `;
