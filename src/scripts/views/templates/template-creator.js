@@ -10,7 +10,7 @@ const createRestaurantItemTemplate = (restaurant) => `
     <div class="card-header">
     <p class="card-content-title">${restaurant.name}</p>
     <span class="card-rating">
-        <img src="../public/images/logos/icons8-star-48.png" alt="card-rating" class="star-icon">
+        <i title="ratings" class="fas fa-star icon-primary"></i>
         <span class="rating">${restaurant.rating}</span>
     </span>
     </div>
@@ -56,6 +56,18 @@ const createRestaurantDetailTemplate = (restaurant) => `
           srcset="${CONFIG.BASE_IMAGE_SMALL_URL + restaurant.pictureId}"
           type="image/jpeg"
           media="all and (max-width: 300px)"
+        />
+        <source
+          class="detail-img lazyload"
+          srcset="${CONFIG.BASE_IMAGE_SMALL_URL + restaurant.pictureId}"
+          type="image/webp"
+          media="all and (min-width: 301px)"
+        />
+        <source
+          class="detail-img lazyload"
+          srcset="${CONFIG.BASE_IMAGE_SMALL_URL + restaurant.pictureId}"
+          type="image/jpeg"
+          media="all and (min-width: 301px)"
         />
         <source
           class="detail-img lazyload"
