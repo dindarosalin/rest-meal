@@ -8,7 +8,7 @@ Before(({ I }) => {
 });
 
 Scenario('showing empty liked Restaurants', ({ I }) => {
-  I.seeElement('#query');
+  I.seeElement('#explore-restaurant-list');
 
   // I.seeElement('.query'); --> menyebabkan error
 
@@ -22,8 +22,8 @@ Scenario('liking one resto', async ({ I }) => {
 
   // pause();
 
-  I.seeElement('.restaurant__name a');
-  const firstResto = locate('.restaurant__name a').first();
+  I.seeElement('.card-content-title');
+  const firstResto = locate('.card-content-title a').first();
   const firstRestoName = await I.grabTextFrom(firstResto);
   I.click(firstResto);
 
@@ -31,8 +31,8 @@ Scenario('liking one resto', async ({ I }) => {
   I.click('#likeButton');
 
   I.amOnPage('/#/favorite');
-  I.seeElement('.restaurant-item');
-  const LikedRestoName = await I.grabTextFrom('.restaurant__name');
+  I.seeElement('.card');
+  const LikedRestoName = await I.grabTextFrom('.card-content-title');
 
   assert.strictEqual(firstRestoName, LikedRestoName);
 });
