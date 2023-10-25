@@ -2,8 +2,8 @@
 /* eslint-disable import/named */
 import FavoriteRestoDB from '../../public/data/favorite-resto-db';
 import {
-  createLikeButtonTemplate,
-  createLikedButtonTemplate,
+  createLikeRestaurantButtonTemplate,
+  createUnlikeRestaurantButtonTemplate,
 } from '../views/templates/template-creator';
 
 const LikeButtonInit = {
@@ -35,7 +35,7 @@ const LikeButtonInit = {
   },
 
   _renderLikeButton() {
-    this._likeButtonContainer.innerHTML = createLikeButtonTemplate();
+    this._likeButtonContainer.innerHTML = createLikeRestaurantButtonTemplate();
 
     const likeButton = document.getElementById('likeButton');
     likeButton.addEventListener('click', async () => {
@@ -45,7 +45,7 @@ const LikeButtonInit = {
   },
 
   _renderLikedButton() {
-    this._likeButtonContainer.innerHTML = createLikedButtonTemplate();
+    this._likeButtonContainer.innerHTML = createUnlikeRestaurantButtonTemplate();
 
     const likedButton = document.getElementById('likeButton');
     likedButton.addEventListener('click', async () => {

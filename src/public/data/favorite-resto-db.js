@@ -1,9 +1,10 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable consistent-return */
 // eslint-disable-next-line import/no-extraneous-dependencies
-import {
-  openDB,
-} from 'idb';
+import { openDB } from 'idb';
 import CONFIG from '../../scripts/globals/config';
+
+require('fake-indexeddb/auto');
 
 const {
   DATABASE_NAME,
@@ -37,8 +38,7 @@ const FavoriteRestoDB = {
     if (!restaurant.hasOwnProperty('id')) {
       return;
     }
-
-    return (await dbPromise).put(OBJECT_STORE_NAME, restaurant);
+    return (await dbPromise).put(OBJECT_STORE_NAME, JSON.parse(JSON.stringify(restaurant)));
   },
 
   async deleteRestaurant(id) {

@@ -1,3 +1,5 @@
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable import/no-unresolved */
 /* eslint-disable quotes */
 /* eslint-disable no-underscore-dangle */
 const path = require('path');
@@ -5,6 +7,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -42,6 +47,8 @@ module.exports = {
         },
       ],
     }),
+    new BundleAnalyzerPlugin(),
+    new CleanWebpackPlugin(),
     new WorkboxWebpackPlugin.GenerateSW({
       swDest: './sw.bundle.js',
       runtimeCaching: [
@@ -60,6 +67,19 @@ module.exports = {
           },
         },
       ],
+    }),
+    new ImageMinimizerPlugin({
+      minimizer: {
+        implementation: ImageMinimizerPlugin.svgoMinify,
+        options: {
+          encodeOptions: {
+            multipass: true,
+            plugins: [
+              "preset-default",
+            ],
+          },
+        },
+      },
     }),
   ],
 };

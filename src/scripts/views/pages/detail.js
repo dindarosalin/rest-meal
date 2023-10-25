@@ -3,7 +3,7 @@ import RestoSources from '../../../public/data/resto-sources';
 import {
   createRestaurantDetailTemplate,
 } from '../templates/template-creator';
-import LikeButtonPres from '../../utils/like-button-presenter';
+import LikeButtonPres from '../../utils/like-button-iniator';
 import PostReview from '../../utils/postreview-initiator';
 import FavoriteRestoDB from '../../../public/data/favorite-resto-db';
 
