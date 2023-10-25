@@ -16,7 +16,7 @@ class Navbar extends HTMLElement {
           <ul class="nav_list">
               <li class="nav_item"><a href="#/home">Home</a></li>
               <li class="nav_item"><a href="#/favorite">Favorite</a></li>
-              <li class="nav_item"><a href="https://github.com/dindarosalin" target="_blank">About Us</a></li>
+              <li class="nav_item"><a href="https://github.com/dindarosalin" target="_blank" rel="noreferrer">About Us</a></li>
           </ul>
       </nav>
     </header>
