@@ -85,12 +85,21 @@
   .menu {
     display: none;
   }
+
+  .hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../public/images/heros/hero-large.jpg');
+  }
 }
 
 @media screen and (max-width: 768px) {
   .menu {
     margin-right: 30px;
   }
+
+  .hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../public/images/heros/hero-small.jpg');
+  }
+
   .nav_list {
     display: none;
     flex-direction: column;
