@@ -4,7 +4,7 @@
 import { openDB } from 'idb';
 import CONFIG from '../../scripts/globals/config';
 
-require('fake-indexeddb/auto');
+// require('fake-indexeddb/auto');
 
 const {
   DATABASE_NAME,
