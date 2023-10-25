@@ -8,10 +8,6 @@ Before(({ I }) => {
 });
 
 Scenario('showing empty liked Restaurants', ({ I }) => {
-  I.seeElement('#explore-restaurant-list');
-
-  // I.seeElement('.query'); --> menyebabkan error
-
   I.see('Tidak ada favorite restaurant yang ditampilkan', '.restaurant-item__not__found');
 });
 
@@ -22,8 +18,8 @@ Scenario('liking one resto', async ({ I }) => {
 
   // pause();
 
-  I.seeElement('.card-content-title');
-  const firstResto = locate('.card-content-title a').first();
+  I.seeElement('.card-detail');
+  const firstResto = locate('.card-detail').first();
   const firstRestoName = await I.grabTextFrom(firstResto);
   I.click(firstResto);
 
@@ -32,7 +28,7 @@ Scenario('liking one resto', async ({ I }) => {
 
   I.amOnPage('/#/favorite');
   I.seeElement('.card');
-  const LikedRestoName = await I.grabTextFrom('.card-content-title');
+  const LikedRestoName = await I.grabTextFrom('.card-detail');
 
   assert.strictEqual(firstRestoName, LikedRestoName);
 });

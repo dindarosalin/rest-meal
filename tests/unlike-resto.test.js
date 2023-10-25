@@ -32,7 +32,7 @@ describe('Unliking A Resto', () => {
   it('should be able to remove liked resto from the list', async () => {
     await TestFactory.createLikeButtonInitWithResto({ id: 1 });
 
-    document.querySelector('[aria-label="unlike this resto"]').dispatchEvent(new Event('click'));
+    document.querySelector('#likeButton').dispatchEvent(new Event('click'));
 
     expect(await FavoriteRestoDB.getAllRestaurant()).toEqual([]);
   });
