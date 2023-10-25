@@ -12,11 +12,11 @@ Scenario('showing empty liked Restaurants', ({ I }) => {
 
   // I.seeElement('.query'); --> menyebabkan error
 
-  I.see('Tidak ada resto untuk ditampilkan', '.restaurant-item__not__found');
+  I.see('Tidak ada favorite restaurant yang ditampilkan', '.restaurant-item__not__found');
 });
 
 Scenario('liking one resto', async ({ I }) => {
-  I.see('Tidak ada resto untuk ditampilkan', '.restaurant-item__not__found');
+  I.see('Tidak ada favorite restaurant yang ditampilkan', '.restaurant-item__not__found');
 
   I.amOnPage('/');
 
