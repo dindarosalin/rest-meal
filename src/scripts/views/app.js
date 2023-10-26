@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable no-underscore-dangle */
 import UrlParser from '../routes/url-parser';
 import routes from '../routes/routes';
@@ -34,6 +35,12 @@ class App {
         behavior: 'smooth',
       });
       skipToContent.blur();
+    });
+
+    document.querySelectorAll('a, button, input').forEach((e) => {
+      if (e.offsetWidth < 44 || e.offsetHeight < 44) {
+        console.log(e);
+      }
     });
   }
 }

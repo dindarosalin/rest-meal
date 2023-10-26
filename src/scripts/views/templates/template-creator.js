@@ -4,7 +4,7 @@ const createRestaurantItemTemplate = (restaurant) => `
 <div class="restaurant-list">
 <article tabindex="0" class="card">
 <div class="card-img-container">
-    <img class="card-image" alt="${restaurant.name}" src="${CONFIG.BASE_IMAGE_MEDIUM_URL + restaurant.pictureId}"/>
+    <img class="card-image lazyload" alt="${restaurant.name}" data-src="${CONFIG.BASE_IMAGE_MEDIUM_URL + restaurant.pictureId}"/>
 </div>
 <div class="card-content">
     <div class="card-header">
@@ -28,7 +28,7 @@ const createSkeletonRestaurantTemplate = (count) => {
     skeleton += `
           <article tabindex="0" class="card">
           <div class="card-img-container">
-              <img class="card-image" alt="skeleton" src="./images/placeholder-medium.jpg" width="100%" height="250px"/>
+              <img class="card-image lazyload" alt="skeleton" data-src="./images/placeholder-medium.jpg" width="100%" height="250px"/>
           </div>
 
           <div class="card-content">
@@ -47,49 +47,49 @@ const createRestaurantDetailTemplate = (restaurant) => `
       <picture>
         <source
           class="detail-img lazyload"
-          srcset="${CONFIG.BASE_IMAGE_SMALL_URL + restaurant.pictureId}"
+          data-src="${CONFIG.BASE_IMAGE_SMALL_URL + restaurant.pictureId}"
           type="image/webp"
           media="all and (max-width: 300px)"
         />
         <source
           class="detail-img lazyload"
-          srcset="${CONFIG.BASE_IMAGE_SMALL_URL + restaurant.pictureId}"
+          data-src="${CONFIG.BASE_IMAGE_SMALL_URL + restaurant.pictureId}"
           type="image/jpeg"
           media="all and (max-width: 300px)"
         />
         <source
           class="detail-img lazyload"
-          srcset="${CONFIG.BASE_IMAGE_SMALL_URL + restaurant.pictureId}"
+          data-src="${CONFIG.BASE_IMAGE_SMALL_URL + restaurant.pictureId}"
           type="image/webp"
           media="all and (min-width: 301px)"
         />
         <source
           class="detail-img lazyload"
-          srcset="${CONFIG.BASE_IMAGE_SMALL_URL + restaurant.pictureId}"
+          data-src="${CONFIG.BASE_IMAGE_SMALL_URL + restaurant.pictureId}"
           type="image/jpeg"
           media="all and (min-width: 301px)"
         />
         <source
           class="detail-img lazyload"
-          srcset="${CONFIG.BASE_IMAGE_MEDIUM_URL + restaurant.pictureId}"
+          data-src="${CONFIG.BASE_IMAGE_MEDIUM_URL + restaurant.pictureId}"
           type="image/webp"
           media="all and (min-width: 700px) and (max-width: 900px)"
         />
         <source
           class="detail-img lazyload"
-          srcset="${CONFIG.BASE_IMAGE_MEDIUM_URL + restaurant.pictureId}"
+          data-src="${CONFIG.BASE_IMAGE_MEDIUM_URL + restaurant.pictureId}"
           type="image/jpeg"
           media="all and (min-width: 700px) and (max-width: 900px)"
         />
         <source
           class="detail-img lazyload"
-          srcset="${CONFIG.BASE_IMAGE_LARGE_URL + restaurant.pictureId}"
+          data-src="${CONFIG.BASE_IMAGE_LARGE_URL + restaurant.pictureId}"
           type="image/webp"
           media="all and (min-width: 901px)"
         />
         <source
           class="detail-img lazyload"
-          srcset="${CONFIG.BASE_IMAGE_LARGE_URL + restaurant.pictureId}"
+          data-src="${CONFIG.BASE_IMAGE_LARGE_URL + restaurant.pictureId}"
           type="image/jpeg"
           media="all and (min-width: 901px)"
         />
