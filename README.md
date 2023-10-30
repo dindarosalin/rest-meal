@@ -7,8 +7,8 @@
 3. Native Capability
 4. Code Quality using ESlint
 5. PWA Implementation
-6. Integration Test
-7. End to end Test
+6. Integration Test using Jest testing framework
+7. End to end Test using codecept
 8. Image Optimization
 9. Bundle Optimization
 # Features
