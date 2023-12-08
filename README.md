@@ -1,7 +1,9 @@
-# Front-End Tools
+# Rest Meal
+Aplikasi mecari resto favorit
+## Front-End Tools
 1. Javascript menggunakan Webpack
 2. Html & CSS
-# Implementations
+## Implementations
 1. Responsibility
 2. Accessibility
 3. Native Capability
@@ -11,13 +13,13 @@
 7. End to end Test using codecept
 8. Image Optimization
 9. Bundle Optimization
-# Features
+## Features
 1. Landing Page with Restaurants List aka /Home
 2. Detail Page to see detail's restaurant
 3. Like Button to Liked and add a restaurant to Favorite Restaurants List
 4. Review Form to Add a Review
 5. Favorite Page to see All Favorite Restaurants
-# UI
+## UI
 ![Dashboard](src/public/images/app/Capture1.PNG)
 ![/Home Restaurants List](src/public/images/app/Capture2.PNG)
 ![Detail Restaurant](src/public/images/app/Capture4.PNG)
