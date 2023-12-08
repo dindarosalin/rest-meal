@@ -1,5 +1,13 @@
 # Rest Meal
 Aplikasi mecari resto favorit
+## Clone Repository
+Untuk menjalankan aplikasi ini secara lokal, silakan clone repository ini dengan menjalankan perintah berikut:
+
+```bash
+git clone https://github.com/dindarosalin/rest-meal.git
+npm install
+npm run dev
+```
 ## Front-End Tools
 1. Javascript menggunakan Webpack
 2. Html & CSS
