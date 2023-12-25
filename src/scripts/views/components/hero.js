@@ -2,6 +2,7 @@
 class Hero extends HTMLElement {
   connectedCallback() {
     this.render();
+    this.lazyLoadBackground();
   }
 
   render() {
@@ -24,13 +25,30 @@ class Hero extends HTMLElement {
     heroInnerDiv.appendChild(tagline);
     heroDiv.appendChild(heroInnerDiv);
 
-    // Set background image dynamically
-    heroDiv.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../public/images/heros/hero-image_2.jpg")';
-    heroDiv.style.backgroundPosition = 'center';
-    heroDiv.style.backgroundSize = 'cover';
-    heroDiv.style.zIndex = '-1';
-
     this.appendChild(heroDiv);
+  }
+
+  lazyLoadBackground() {
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5, // Appear when 50% of the element is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const heroDiv = entry.target;
+          heroDiv.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../public/images/heros/hero-image_2.jpg")';
+          heroDiv.style.backgroundPosition = 'center';
+          heroDiv.style.backgroundSize = 'cover';
+          heroDiv.style.zIndex = '-1';
+          observer.unobserve(heroDiv);
+        }
+      });
+    }, options);
+
+    observer.observe(this);
   }
 }
 
